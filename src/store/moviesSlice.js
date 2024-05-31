@@ -2,8 +2,14 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const API_URL = process.env.MOVIES_API_URL;
-console.log( 'API_URL => ', API_URL );
 
+// Persisting Favorite Movies locally using localStorage
+const getFavoriteMoviesFromLocalStorage = () => {
+  const favoriteMovies = localStorage.getItem( 'favoriteMovies' );
+  return favoriteMovies ? JSON.parse( favoriteMovies ) : [];
+};
+
+// Fetching movies from API stored as an env variable 
 export const fetchMovies = createAsyncThunk(
   'movies/fetchMovies',
   async () => {
@@ -16,11 +22,12 @@ const moviesSlice = createSlice( {
   name: 'movies',
   initialState: {
     movies: [],
-    favoriteMovies: [],
+    favoriteMovies: getFavoriteMoviesFromLocalStorage(), // Initialize from localStorage
     isLoading: false,
     error: null,
   },
   reducers: {
+    // Reducer for toggling movie to Favorite/Unfavorite
     toggleFavorite: ( state, action ) => {
       const movie = action.payload;
       const isFavorite = state.favoriteMovies.some( ( m ) => m.id === movie.id );
@@ -30,6 +37,7 @@ const moviesSlice = createSlice( {
       } else {
         state.favoriteMovies.push( movie );
       }
+      localStorage.setItem( 'favoriteMovies', JSON.stringify( state.favoriteMovies ) ); // Save Favorite Movies to localStorage
     },
   },
   extraReducers: ( builder ) => {
