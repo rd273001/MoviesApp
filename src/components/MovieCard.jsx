@@ -18,26 +18,26 @@ const MovieCard = React.memo( ( { movie, isFavorite } ) => {
     <Link
       to={ movie.imdb_url }
       target='_blank'
-      className='bg-[radial-gradient(#ccc,#eee)] rounded-lg shadow-lg ring-0 ring-slate-300 shadow-gray-400 overflow-hidden transform transition duration-500 hover:scale-105'
+      className='rounded-lg shadow-lg border-[1px] border-slate-400 shadow-gray-400 overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-gray-600 flex flex-col flex-grow'
     >
       
       <img
         src={ movie.image }
         alt={ movie.movie }
-        className='w-full h-64 object-cover transition-transform duration-500'
+        className='w-full h-64 bg-gray-200 object-cover transition-transform duration-500'
       />
-      <div className='p-4'>
+      <div className='p-4 flex flex-col flex-grow bg-[radial-gradient(#eee,#aaa)]'>
         <h3 className='text-xl font-bold mb-2'>{ movie.movie }</h3>
 
-        <p className='text-gray-700 mb-2'>
+        <p className='text-gray-700 mb-2 mt-auto'>
           <span className='font-semibold'>Rating:</span> { movie.rating }
         </p>
 
-        <div className='flex justify-between items-end gap-x-4'>
+        <div className='flex justify-between text-center gap-x-4'>
           <Link
             to={ movie.imdb_url }
             target='_blank'
-            className='bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-2 px-3 rounded'
+            className='bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-2 px-3 rounded hover:scale-105 active:scale-100'
           >
             IMDb
           </Link>
@@ -47,9 +47,9 @@ const MovieCard = React.memo( ( { movie, isFavorite } ) => {
             className={ `${ isFavorite
               ? 'bg-red-500 hover:bg-red-700'
               : 'bg-green-500 hover:bg-green-700'
-              } text-white font-medium py-2 px-3 rounded transition-colors duration-300` }
+              } text-white font-medium py-2 px-3 rounded transition-colors duration-300 hover:scale-105 active:scale-100` }
           >
-            { isFavorite ? 'Remove from Favorites' : 'Add to Favorites' }
+            { isFavorite ? 'Remove' : 'Add to Favorites' }
           </button>
         </div>
 

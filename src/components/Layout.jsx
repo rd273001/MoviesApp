@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 
 const Layout = () => {
@@ -11,17 +11,18 @@ const Layout = () => {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex items-center justify-between h-16'>
             <div className='flex items-center'>
-              <div className='flex-shrink-0'>
-                <Link to='/' className='text-white font-bold text-xl sm:text-2xl'>MoviesApp</Link>
+              <div className='flex flex-shrink-0 gap-x-1 items-center'>
+                <img src='moviesapp-logo.jpg' className='sm:size-6 size-5 rounded' />
+                <Link to='/' className='text-white font-bold text-xl sm:text-2xl bg-gradient-to-br bg-clip-text text-transparent w-fit from-red-500 via-red-400 to-slate-100 shadow-cyan-300 drop-shadow-md'>MoviesApp</Link>
               </div>
               <div className='hidden md:block'>
                 <div className='ml-10 flex items-baseline space-x-4'>
-                  <Link to='/' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium'>
+                  <NavLink to='/' className={ ( state ) => ( `${ state.isActive ? 'underline text-white' : '' } text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium` ) }>
                     Home
-                  </Link>
-                  <Link to='/favorites' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium'>
+                  </NavLink>
+                  <NavLink to='/favorites' className={ ( state ) => ( `${ state.isActive ? 'underline text-white' : '' } text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium` ) }>
                     Favorites
-                  </Link>
+                  </NavLink>
                 </div>
               </div>
             </div>
@@ -33,6 +34,8 @@ const Layout = () => {
                 aria-controls='mobile-menu'
                 aria-expanded={ isOpen ? 'true' : 'false' }
               >
+                {/* Screen reader text Open main menu ensures that users who rely on screen readers understand the button's function.
+                    Visually hidden element, provides a textual description */}
                 <span className='sr-only'>Open main menu</span>
                 { !isOpen ? (
                   <svg
@@ -84,20 +87,20 @@ const Layout = () => {
           { ( ref ) => (
             <div className='md:hidden' id='mobile-menu'>
               <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
-                <Link
+                <NavLink
                   to='/'
-                  className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                  className={ ( state ) => ( `${state.isActive ? 'underline text-white' : '' } text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`) }
                   onClick={ () => setIsOpen( false ) }
                 >
                   Home
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to='/favorites'
-                  className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                  className={ ( state ) => ( `${ state.isActive ? 'underline text-white' : '' } text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium` ) }
                   onClick={ () => setIsOpen( false ) }
                 >
                   Favorites
-                </Link>
+                </NavLink>
               </div>
             </div>
           ) }
