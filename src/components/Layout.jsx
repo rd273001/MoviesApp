@@ -89,14 +89,14 @@ const Layout = () => {
               <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
                 <NavLink
                   to='/'
-                  className={ ( state ) => ( `${state.isActive ? 'underline text-white' : '' } text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`) }
+                  className={ ( state ) => ( `${state.isActive ? 'underline text-white' : '' } text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md font-medium text-center`) }
                   onClick={ () => setIsOpen( false ) }
                 >
                   Home
                 </NavLink>
                 <NavLink
                   to='/favorites'
-                  className={ ( state ) => ( `${ state.isActive ? 'underline text-white' : '' } text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium` ) }
+                  className={ ( state ) => ( `${ state.isActive ? 'underline text-white' : '' } text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md font-medium text-center` ) }
                   onClick={ () => setIsOpen( false ) }
                 >
                   Favorites
