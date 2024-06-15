@@ -77,12 +77,12 @@ const Layout = () => {
 
         <Transition
           show={ isOpen }
-          enter='transition ease-out duration-100 transform'
-          enterFrom='opacity-0 scale-95'
+          enter='transition ease-out duration-200 transform'
+          enterFrom='opacity-20 scale-150'
           enterTo='opacity-100 scale-100'
-          leave='transition ease-in duration-75 transform'
-          leaveFrom='opacity-100 scale-100'
-          leaveTo='opacity-0 scale-95'
+          leave='transition ease-in duration-200 transform'
+          leaveFrom='opacity-100 scale-120'
+          leaveTo='opacity-20 scale-0'
         >
           { ( ref ) => (
             <div className='md:hidden' id='mobile-menu'>
