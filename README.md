@@ -11,6 +11,15 @@ MoviesApp is a web application built with React, Vite, Tailwind CSS, and Redux. 
 
 ## Tech Stack
 
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](#) &nbsp;&nbsp;
+[![Node.js](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](#) &nbsp;&nbsp;
+[![Redux.js](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)](#) &nbsp;&nbsp;
+[![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](#) &nbsp;&nbsp;
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](#) &nbsp;&nbsp;
+[![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](#) &nbsp;&nbsp;
+[![Axios](https://img.shields.io/badge/axios-671ddf?&style=for-the-badge&logo=axios&logoColor=white)](#) &nbsp;&nbsp;
+[![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](#)
+
 - **React**: A JavaScript library for building user interfaces.
 - **Vite**: A fast build tool for modern web projects.
 - **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
@@ -38,6 +47,7 @@ cd movies-app
 ```
 
 ### Install Dependencies
+
 - Using npm:
 ```npm install```
 
@@ -45,11 +55,13 @@ cd movies-app
 ```yarn install```
 
 ### Environment Variables
+
 - Create a .env file in the root directory of the project and add the following environment variable:
-MOVIES_API_URL=https://dummyapi.online/api/movies
+MOVIES_API_URL=<https://dummyapi.online/api/movies>
 
 ### Running the Application
-#### To start the development server, run:
+
+#### To start the development server, run
 
 - Using npm:
 ```npm run dev```
@@ -57,4 +69,4 @@ MOVIES_API_URL=https://dummyapi.online/api/movies
 - Using yarn:
 ```yarn dev```
 
-- The application will be available at (http://localhost:3000)
+- The application will be available at <http://localhost:3000>
