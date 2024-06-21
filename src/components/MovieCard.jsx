@@ -18,13 +18,13 @@ const MovieCard = React.memo( ( { movie, isFavorite } ) => {
     <Link
       to={ movie.imdb_url }
       target='_blank'
-      className='rounded-lg shadow-lg ring-1 ring-black/5 shadow-black/25 overflow-hidden duration-500 hover:scale-105 hover:shadow-black/55 flex flex-col flex-grow'
+      className='rounded-lg shadow-md shadow-black/35 hover:shadow-black/55 hover:shadow-xl ring-1 ring-black/5 overflow-hidden ease-in-out duration-500 hover:scale-[1.03] flex flex-col flex-grow w-full'
     >
-      
+
       <img
         src={ movie.image }
         alt={ movie.movie }
-        className='w-full h-64 bg-gray-200 object-cover transition-transform duration-500'
+        className='w-full aspect-[4/3] bg-gray-200 object-cover transition-transform duration-500'
       />
       <div className='p-4 flex flex-col flex-grow bg-[radial-gradient(#eee,#aaa)]'>
         <h3 className='text-xl text-black font-semibold mb-2'>{ movie.movie }</h3>
@@ -37,7 +37,7 @@ const MovieCard = React.memo( ( { movie, isFavorite } ) => {
           <Link
             to={ movie.imdb_url }
             target='_blank'
-            className='bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-2 px-3 rounded hover:scale-105 active:scale-100'
+            className='bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-1.5 px-3 rounded hover:scale-105 active:scale-100'
           >
             IMDb
           </Link>
@@ -47,7 +47,7 @@ const MovieCard = React.memo( ( { movie, isFavorite } ) => {
             className={ `${ isFavorite
               ? 'bg-red-500 hover:bg-red-700'
               : 'bg-green-500 hover:bg-green-700'
-              } text-white font-medium py-2 px-3 rounded hover:scale-105 active:scale-100` }
+              } text-white font-medium py-1.5 px-3 rounded hover:scale-105 active:scale-100` }
           >
             { isFavorite ? 'Remove' : 'Add to Favorites' }
           </button>
